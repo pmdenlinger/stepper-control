@@ -8,9 +8,23 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @State var stepperValue = 0
+    
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        
+        Stepper("Stepped Value = \(stepperValue)") {
+            
+//            Increment function or action
+            stepperValue += 1
+            
+        } onDecrement: {
+            
+//            Decrement function or action
+            if stepperValue > 0 {
+                stepperValue -= 1
+            }
+        }
     }
 }
 
